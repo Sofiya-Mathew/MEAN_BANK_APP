@@ -1,0 +1,49 @@
+basic commands
+
+1.npm init-createing package.json
+2.npm i express
+3.install JWT-npm i jsonwebtoken
+basic steps
+1.creating folder
+creating package.json
+i expresscreate index.js file
+import express inside index.js file
+creste app using express
+setup port number
+resolving http request
+install mongoose-npm i mongoose
+Install Cors-npm i cors
+
+HTTP response code
+
+1xx-information
+2xx-success
+3xx-redirection
+4xx-client error
+5xx-server error
+
+JWT
+authentication
+    server generated token        request+number
+login=======================>client================>server=>
+
+token generate=sign()
+
+Middleware
+--------------
+1.application specific Middleware
+2.router specific middleware-for token verification-jwtmiddleware
+         verify()-token validation
+
+Database Integration
+--------------------
+using mongoose
+database connection
+Create model using mongoose
+
+Asynchronoous function resolving
+---------------------------
+Resolve-then
+Reject-catch
+
+CROS-CROSS ORIGIN RESOURCE SHARING

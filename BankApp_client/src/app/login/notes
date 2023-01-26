@@ -1,0 +1,64 @@
+data binding
+
+1.one way binding
+
+html-ts or ts-html
+ts->component
+html->view
+
+1.component to view (ts-html)
+a)string interpolation-{{expression}}
+b) property binding=[atribute name]='property'
+
+2.view to component(html-ts)
+  a)event binding- (event name)='function name()'
+  b)event binding using $(event)-(event name)=function name ($event)
+  c)event binding using template referencing variable -#variable name
+
+2.two way binding
+
+
+Angular services
+-----------------
+ng g s servicename
+
+
+Angular directives
+------------------
+a)Component directives
+b)Structural directives
+   a)ngfor
+   b)ngIf---validation
+
+Angular forms
+---------
+a)Template driven forms(htm page design)
+b)Model driven forms(frst ys then html)-advanced validation methods
+  1)Reactive forms
+  form group,array,control
+  directly add validation methods
+  add validation
+  import reactive form modules
+
+Local storage
+---------
+-setItem
+-getItem
+Parent child realtionship
+-------------------------
+parent to child-@input
+child to parent-@output
+
+Angular pipes
+----------
+{{value-expression | date [:format [timezone]]}
+
+Frontend and backend integrration
+--------------
+import HTTPclientmodule -for creating http request
+inject HTTPClient
+Using httpclientmodule-For making api requests
+    RxJs->reactive extention for js to solve assynchronous request events
+    Rxjs has tow methods-->1)Observable(alternative of promise)
+                                        a)resolve-subscribe
+                                        b)reject-catch

@@ -1,0 +1,78 @@
+          <div class="page_wrapper bg_dark" >
+    <div class="formwrapper rounded shadow-lg" id="inp-fields">
+      <div class="icon text-center mt-4 mb-3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="30"
+          fill="grey"
+          class="bi bi-bank2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"
+          />
+        </svg>
+      </div>
+      <h2 class="text-center">My Bank</h2>
+      <div class="inp-area p-1">
+        <form [formGroup]="loginForm" action="" class="text-center m-3" autocomplete="off">
+          <input
+            formControlName="acno"
+            type="text"
+            [placeholder]="accounts"
+            name="acno"
+            id="login_Acno"
+            class="form-controll mb-3 text-center p-2 mt-4 ms-2"
+          /><br />
+          <div
+            *ngIf="
+              this.loginForm.get('acno')?.touched &&
+              this.loginForm.get('acno')?.errors
+            "
+            style="color: rgb(202, 115, 115)"
+          >
+            invalid user acno
+          </div>
+
+          <input
+            formControlName="pwd"
+            type="password"
+            placeholder="Password"
+            name="pwd"
+            id="login_pwd"
+            class="form-controll text-center p-2 mt-3 mb-3 ms-2"
+          /><br />
+          <div
+            *ngIf="
+              this.loginForm.get('pwd')?.touched &&
+              this.loginForm.get('pwd')?.errors
+            "
+            style="color: rgb(202, 115, 115)"
+          >
+            invalid password
+          </div>
+          <div class="d-btn">
+            <button
+              type="button"
+              class="mt-4 pt-2 pb-2 mb-3"
+              (click)="login()"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+        <div class="links mt-3 text-center mb-3">
+          <span
+            ><a href="" class="text-decoration-none">Forgot password</a></span
+          >
+          <span>Or</span>
+          <span
+            ><a routerLink="registration" class="text-decoration-none"
+              >Sign Up</a
+            ></span
+          >
+        </div>
+      </div>
+    </div>
+</div>

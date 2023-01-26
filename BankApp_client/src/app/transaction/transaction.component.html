@@ -1,0 +1,33 @@
+<div class="block__bg ">
+    <div class="block_wrapper ">
+        <div class="img_wrap">
+            <img src="https://i.postimg.cc/NFjHSKqb/360-F-192718412-s1rag-Nh-Egt-IO0-Uym48-Xn-W2-Wcmb-OTZjv-I-removebg-preview.png" alt="">
+        </div>
+    <div class="Details">
+        <div class="btn mb-5">
+            <a id="a1" routerLink="/dashboard" class="home">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+              </svg>
+            </div>
+    <h1 class=" tracking-in-contract text-center">Your Transaction Details is Here!</h1> 
+</div>
+</div>
+<div class="table_wrapper">
+<table class="table table-bordered  m-5">
+    <thead class="table-dark">
+        <tr>
+            <th>Type</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of transaction">
+            <td>{{t.type}}</td>
+            <td>{{t.amount}}</td>
+        </tr>
+
+    </tbody>
+  </table>
+</div>
+</div>

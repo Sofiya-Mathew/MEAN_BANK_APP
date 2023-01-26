@@ -1,0 +1,101 @@
+<div class="navbar gradient__bg mb-4">
+  <h1 class="ms-4 text-focus-in ">welcome {{user}}</h1>
+<a routerLink="/transaction" class="transaction_details">View transaction details</a>
+<div class="buttons">
+<div class="logout">
+  <input type="button" class="btn ps-5 pe-5 pt-1 pb-1 m-2" value="logout" (click)="logout()">
+</div>
+
+<div class="delete ms-2">
+  <input type="button" class="btn ps-5 pe-5 pt-1 pb-1 m-2" value="delete" (click)="delete()">
+</div>
+</div>
+</div>
+<app-delete [item]="acno" (onCancel)="onCancel()" (onDelete)="onDelete($event)"></app-delete>
+<div class="header_wrap header__bg" >
+<div class="header ">
+  <div class="header_text">
+  <h1 class="gradient__text">ABOUT US</h1>
+  <p>We always aim at providing superior, proactive banking service to niche market globally, while providing cost effective and responsive services</p>
+</div>
+</div>
+<div class="header_img">
+  <img src="https://i.postimg.cc/PJb3GjMQ/Pngtree-financial-management-mobile-banking-revenue-5780265.png" alt="">
+</div>
+</div>
+<div class="parent parent__bg" >
+    <div class="child bg child__bg  mt-5 shadow-lg p-5 mb-5  rounded">
+        <div class="wrapper">
+            <div class="icon text-center mt-4 mb-3">
+             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" fill="grey" class="bi bi-bank2" viewBox="0 0 16 16">
+                 <path d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"/>
+               </svg>
+            </div>
+            <h2 class="text-center mb-4"> Deposit</h2>
+          <div class="inp-area " >
+             <form [formGroup]="depositForm" action="" class="text-center m-2">
+                 <input formControlName="acno" type="text" placeholder="Account Number" name="acno" id="depo_Acno" class="form-controll m-1"><br>
+                 <div *ngIf="this.depositForm.get('acno')?.touched && this.depositForm.get('acno')?.errors" style="color: rgb(146, 94, 94);">invalid acno</div>
+                 <input formControlName="pwd" name="pwd" type="password" placeholder="Password"  id="depo_pwd"class="form-controll m-1"><br>
+                 <div *ngIf="this.depositForm.get('pwd')?.touched && this.depositForm.get('pwd')?.errors" style="color: rgb(146, 94, 94);">invalid password</div>
+                 <input formControlName="amount" name="amount" type="text" placeholder="Enter amount"  name="amount" id="depo_amount"  class="form-controll m-1"><br>
+                 <div *ngIf="this.depositForm.get('amount')?.touched && this.depositForm.get('amount')?.errors" style="color: rgb(146, 94, 94);">invalid amount</div>
+                 <div class="d-grid gap-2">
+                     <button type="button" class="btn mt-4" (click)="deposit()">Deposit</button>
+                 </div>
+             </form>
+          </div>
+          </div>
+        </div>
+          <div class="child child__bg mt-5 shadow-lg p-5 mb-5  rounded">
+            <div class="wrapper">
+            <div class="icon text-center mt-4 mb-3">
+             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" fill="grey" class="bi bi-bank2" viewBox="0 0 16 16">
+                 <path d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z"/>
+               </svg>
+            </div>
+            <h2 class="text-center mb-4"> Withdraw</h2>
+          <div class="inp-area " >
+             <form [formGroup]="withdrawForm" action="" class="text-center m-2">
+                 <input formControlName="acno1" type="text" placeholder="Account Number" name="acno1" id="with_Acno" class="form-controll m-1" ><br>
+                 <div *ngIf="this.withdrawForm.get('acno')?.touched && this.withdrawForm.get('acno')?.errors" style="color: red;">invalid acno</div>
+                 <input formControlName="pwd1" name="pwd1" type="password" placeholder="Password" name="pwd1" id="with_pwd" class="form-controll m-1"><br>
+                 <div *ngIf="this.withdrawForm.get('pwd')?.touched && this.withdrawForm.get('pwd')?.errors" style="color: red;">invalid password</div>
+                 <input formControlName="amount1"  name="amount1" type="text" placeholder="Enter amount"  name="amount1" id="with_amount"  class="form-controll m-1"><br>
+                 <div *ngIf="this.withdrawForm.get('amount')?.touched && this.withdrawForm.get('amount')?.errors" style="color: red;">invalid amount</div>
+                 <div class="d-grid gap-2">
+                    <button type="button" class="btn mt-4" (click)="withdraw()">Withdraw</button>
+                </div>
+             </form>
+             
+          </div>
+         </div>
+          </div>
+    </div>
+    <div class="footer gradient__bg">
+      <div class="footer-wrapper">
+        <div class="address">
+          <h5>Site Map</h5><br>
+          <span>1999 Campus Dr,</span>
+          <span>Evanston,</span>
+          <span>IL 60208,</span>
+          <span>United States</span>
+        </div>
+        <hr>
+        <div class="enquiry">
+          <h5>Any enquiries?</h5><br>
+          <input type="email" placeholder="Your Email" class="mb-2 p-1">
+         <textarea rows="3" cols="50" placeholder="type something.."></textarea>
+         <button value="submit" class="btn mt-1">submit</button>
+        </div>
+        <hr>
+        <div class="icons">
+          <h5>Get in touch</h5>
+          <img src="../../assets/twitter.png" alt="">
+          <img src="../../assets/linkedin.png" alt="">
+          <img src="../../assets/instagram.png" alt="">
+
+        </div>
+      </div>
+    </div>
+
