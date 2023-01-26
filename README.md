@@ -6,7 +6,7 @@
 * MongoDB
 * JWT
 ### Features
-* User can sign in and signup.
+* User can signin and signup.
 * User can deposit and withraw amount from their accounts.
 * User can see their transaction history.
 * Modern UI design.
